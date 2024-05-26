@@ -9,12 +9,12 @@ def initialize_drone():
     client.enableApiControl(True)
     client.armDisarm(True)
     client.takeoffAsync().join()
-    client.simPause(True)
+    # client.simPause(True)
     print("Drone initialized and taken off successfully")
     return client
 
 def motor_controll (client,front_right_pwm, rear_left_pwm, front_left_pwm, rear_right_pwm, duration):
-    client.simPause(False)
+    # client.simPause(False)
     client.moveByMotorPWMsAsync(front_right_pwm, rear_left_pwm, front_left_pwm, rear_right_pwm, duration, vehicle_name='').join()
 
 def read_imu_data (client):
